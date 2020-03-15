@@ -585,32 +585,49 @@ Rodando o binário no gdb, é possível perceber que existe uma comparação do 
 Sem isto, o programa da um call para a função "sorrybro" (que da print da mensagem de erro e exit)
 
 ### Reiniciando o debug com o texto "12345"
+
 Valor que entrou, a primeira letra, soma 1 (ex: 0x31 + 0x1, 0x32)
+
 Compara o valor com 0x40, logo, precisa ser fornecido 0x39 (equivale ao texto "9")
+
 Sem isto, voltamos a cair em "sorrybro"
+
 Reiniciando...
 
 ### Reiniciando o debug com o texto "92345"
+
 Continua errado... aparentemente, a comparação é com a segunda letra do texto inserido, 0x40
+
 Reiniciando
 
 ### Reiniciando o debug com o texto "1@345"
+
 É isso, agora passamos, agora, foram somados todos os outros caracteres (em ascii, 0x33 + 0x34 + 0x35= 0x9c)
+
 Agora, é comparado se o valor é igual a 0x12c, ou seja, errei a combinação
+
 É chamado sorrybro
+
 Reiniciando com caracteres que, em ascii, somados, dão 0x12c
+
 0x12c em decimal é igual a 300, na tabela ascii, d equivale a 100 (0x64), vamos tentar 1@ddd
 
 ### Reiniciando o debug com o texto "1@ddd"
+
 É isso, após as consecutivas somas, temos o valor 0x12c, o código passa
+
 Temos a resposta "nice one! Now, can you keygen me?"
+
 Hora do keygen...
 
 
 ### Keygen
+
 Rode o arquivo keygen.py, receba uma key e coloque como input do keygen.bin ou, se preferir, redirecione o stdin do script em python para o executável através do comando abaixo:
+
 ```bash
-./glowwine $(python3 ./keygen.py)
+$ ./glowwine $(python3 ./keygen.py)
+nice one! Now, can you keygen me?
 ```
 
 
